@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ischoolbar.programmer.dao.admin.GongXianDao">
+	<!-- 贡献插入操作 -->
+	<insert id="add" parameterType="com.ischoolbar.programmer.entity.admin.Jiaoxuegongxian">
+		insert into jiaoxuegongxian(id,course,teacher,jiaomi,conums,cochs,cocredits,coobjects,coobjects2,coobjects3,coches,ecochs,syear,quarter,city,classid,beizhu,checked) values(null,#{course},#{teacher},#{jiaomi},#{conums},#{cochs},#{cocredits},#{coobjects},#{coobjects2},#{coobjects3},#{coches},#{ecochs},#{syear},#{quarter},#{city},#{classid},#{beizhu},#{checked})
+	</insert>
+	
+	<!-- 获取所有贡献信息 -->
+	<select id="findAll" resultType="com.ischoolbar.programmer.entity.admin.Jiaoxuegongxian">
+		select * from jiaoxuegongxian 
+	</select>
+	<!-- 根据教师或课程获取所有贡献信息 -->
+	<select id="findAllByCourseOrTeacher" parameterType="String" resultType="com.ischoolbar.programmer.entity.admin.Jiaoxuegongxian">
+		select * from jiaoxuegongxian where course like '%${value}%' or teacher like '%${value}%'
+	</select>
+	<!-- 删除贡献信息 -->
+	<delete id="delete" parameterType="Long">
+		delete from jiaoxuegongxian where id =${value}
+	</delete>
+	<!-- 贡献编辑操作 -->
+	<update id="edit" parameterType="com.ischoolbar.programmer.entity.admin.Jiaoxuegongxian">
+		update jiaoxuegongxian set course = #{course},teacher=#{teacher},jiaomi=#{jiaomi},conums=#{conums},cochs=#{cochs},cocredits=#{cocredits},coobjects=#{coobjects},coobjects2=#{coobjects2},coobjects3=#{coobjects3},coches=#{coches},ecochs=#{ecochs},syear=#{syear},quarter=#{quarter},city=#{city},classid=#{classid},beizhu=#{beizhu},checked=#{checked}  where id = #{id};
+	</update>
+	<!-- 贡献id查询-->
+	<select id="findById" resultType="com.ischoolbar.programmer.entity.admin.Jiaoxuegongxian">
+		select * from jiaoxuegongxian where id=#{id}
+	</select>
+	
+	
+	
+	<insert id="insertSelective" parameterType="com.ischoolbar.programmer.entity.admin.Teacher" >
+    insert into teacher(teid,chinesename) values(null,#{chinesename})
+    
+  </insert>
+	
+
+  <insert id="insertAuthor" parameterType="com.ischoolbar.programmer.entity.admin.Author" >
+    insert into author(auid,aname) values(null,#{aname})
+    
+  </insert>
+
+  <insert id="insertDepartment" parameterType="com.ischoolbar.programmer.entity.admin.Department" >
+    insert into department(deid,major) values(null,#{major})
+    
+  </insert>
+
+  <insert id="insertQikanwenzhang" parameterType="com.ischoolbar.programmer.entity.admin.Qikanwenzhang" >
+    insert into qikanwenzhang(pername,dename,denames,dechar,languages,issn) values(null,#{dename},#{denames},#{dechar},#{languages},#{issn})
+    
+  </insert>
+	
+	<insert id="insertLunwen" parameterType="com.ischoolbar.programmer.entity.admin.Lunwen" >
+    insert into huiyilunwen(panum,postdate,dename) values(null,#{postdate},#{dename})
+    
+  </insert>
+  
+
+	
+
+
+
+	
+
+	
+
+</mapper>

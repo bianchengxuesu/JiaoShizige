@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ischoolbar.programmer.dao.admin.SpecialtyDao">
+	<!-- 职称添加操作 -->
+	<insert id="add" parameterType="com.ischoolbar.programmer.entity.admin.Specialty">		
+		insert into specialty(spid,chineseName,englishName,englishNames,peopleNum) values(null,#{chineseName},#{englishName},#{englishNames},0)
+	</insert>
+	<!-- 获取所有专业信息 -->
+	<select id="findAll" resultType="com.ischoolbar.programmer.entity.admin.Specialty">
+		select * from specialty
+	</select>
+	<!-- 通过id获取专业名称 -->
+	<select id="findNameById" resultType="String">
+		select chineseName from specialty where spid = #{spid}
+	</select>
+	<!-- 通过名称获取专业id -->
+	<select id="findIdByName" resultType="Long">
+		select spid from specialty where chineseName = #{chineseName}
+	</select>
+	<!-- 通过id加专业人数 -->
+	<update id="addNumById" parameterType="Long">
+		update specialty set peopleNum=peopleNum+1 where spid = #{spid}
+	</update>
+	<!-- 通过id减专业人数 -->
+	<update id="subNumById" parameterType="Long">
+		update specialty set peopleNum=peopleNum-1 where spid = #{spid}
+	</update>
+	<!-- 专业删除操作 -->
+	<delete id="delete" parameterType="Long">
+		delete from specialty where spid =${value}
+	</delete>
+</mapper>

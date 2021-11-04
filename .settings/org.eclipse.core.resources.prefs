@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/views/zhiligongxian/huiyilunwen/huiyilunwen.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/zhiligongxian/jiaoxuehuojiang/jiaoxuehuojiangtianjia.jsp=UTF-8
+encoding//WebContent/index.jsp=UTF-8
+encoding//WebContent/resources/admin/ueditor/jsp/config.json=UTF-8
+encoding//src/com/ischoolbar/programmer/controller/admin/GongXianController.java=UTF-8
+encoding//src/com/ischoolbar/programmer/controller/admin/SystemController.java=UTF-8
+encoding//src/com/ischoolbar/programmer/dao/admin/GongXianDao.java=UTF-8
+encoding//src/com/ischoolbar/programmer/dao/admin/UserDao.java=UTF-8
+encoding//src/com/ischoolbar/programmer/entity/admin/Jiaoxuegongxian.java=UTF-8
+encoding//src/com/ischoolbar/programmer/entity/admin/User.java=UTF-8
+encoding//src/com/ischoolbar/programmer/service/admin/GongXianService.java=UTF-8
+encoding//src/com/ischoolbar/programmer/service/admin/UserService.java=UTF-8
+encoding//src/com/ischoolbar/programmer/service/admin/impl/UserServicelmpl.java=UTF-8
+encoding//src/com/ischoolbar/programmer/util/CpachaUtil.java=UTF-8
+encoding//src/config/db.properties=UTF-8

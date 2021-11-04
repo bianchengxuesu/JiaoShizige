@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ischoolbar.programmer.dao.admin.ZPatentDao">
+	<!-- 插入操作 -->
+	<insert id="add" parameterType="com.ischoolbar.programmer.entity.admin.Patent">
+		insert into patent(patent_id,patent_name,holder,apply_number,data,comment) 
+					values(#{patent_id},#{patent_name},#{holder},#{apply_number},#{data},#{comment})
+	</insert>
+	<!-- 获取所有信息 -->
+	<select id="findAll" resultType="com.ischoolbar.programmer.entity.admin.Patent">
+		select * from patent
+	</select>
+	<!-- id查询信息 -->
+	<select id="queryById" resultType="com.ischoolbar.programmer.entity.admin.Patent" parameterType="long">
+		select * from patent where patent_id=#{patent_id}
+	</select>
+</mapper>

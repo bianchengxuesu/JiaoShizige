@@ -1,0 +1,158 @@
+/*主要样式*/
+.subNavBox {
+   width:100%;
+   margin:0 auto;
+   background:#f5f5f5;
+ }
+ .subNavBox ul,li {
+   margin:0;
+   padding:0;
+ }
+ .subNavHead{
+   border-bottom:solid 1px #e1e1e1;
+   cursor:pointer;
+   font-weight:bold;
+   font-size:16px;
+   color:#555;
+   height:45px;
+   line-height:45px;
+   text-align:center;
+ }
+ .subNavHead_login{
+
+   cursor:pointer;
+   font-weight:bold;
+   font-size:16px;
+   color:#555;
+   height:56px;
+   line-height:56px;
+   text-align:center;
+ }
+  .subNavHead_Right{
+   border-bottom:solid 1px #e1e1e1;
+   cursor:pointer;
+   font-weight:bold;
+   font-size:16px;
+   color:#555;
+   height:40px;
+   line-height:40px;
+   text-align:center;
+ }
+  .subNavMid{
+   border-top:solid 1px #e5e5e5;
+   border-bottom:solid 1px #ccc;
+   cursor:pointer;
+   font-size:15px;
+   color:#555;
+   height:40px;
+   line-height:40px;
+   text-align:center;
+   background:#f3f3f3;
+ }
+  .subNavInfo{
+   cursor:pointer;
+   font-weight:bold;
+   font-size:16px;
+   color:#555;
+   text-align:center;
+   background:#f5f5f5;
+ }
+.subNav{
+   border-bottom:solid 1px #e1e1e1;
+   cursor:pointer;
+   font-weight:bold;
+   font-size:15px;
+   color:#555;
+   height:40px;
+   line-height:40px;
+ }
+.to {
+   background:url(../images/jia.png) no-repeat;
+   background-position:95% 50%
+}
+.selected {
+   color:#fff;background-color:#ebb30a;
+ }
+.subNav a {
+   padding-left:20px;
+   display:block;
+   width:100%;
+   height:40px;
+   font-size:15px;
+   line-height:40px;
+   color:#555;
+   text-decoration:none;
+ }
+.subNav a:hover{line-height:40px;height:40px;color:#fff;background-color:#ebb30a;}
+.subNavLine{
+   border-bottom:solid 1px #e1e1e1;
+   cursor:pointer;
+   font-weight:bold;
+   font-size:16px;
+   color:#555;
+   line-height:35px;
+   text-align:center;
+   background:#e1e1e1;
+ }
+.subNavPre {
+   border-bottom:solid 1px #e5e5e5;
+   
+ }
+.subNavPre a {
+   background:#f1f1f1;
+   padding-left:20px;
+   display:block;
+   width:100%;
+   height:40px;
+   font-size:15px;
+   line-height:40px;
+   color:#333;
+   text-decoration:none;   
+}
+.subNavPre a:hover{color:#fff;background-color:#ebb30a;}
+.currentDd{color:#277fc2}
+.currentDt{background:url(../images/jian.png) no-repeat;background-position:95% 50%}
+.navContent{
+   display:none;
+   background:#666;
+   border-top:solid 1px #565656;
+}
+.navContent li a {
+   display:block;
+   width:100%;
+   height:35px;
+   text-align:center;
+   font-size:15px;
+   line-height:35px;
+   color:#fff;
+   text-decoration:none;
+   border-bottom:solid 1px #565656;
+}
+.navContent li a:hover {
+   color:#fff;
+   background-color:#ebb30a;
+}
+
+.navContentShow{
+   display:block;
+   background:#666;
+   border-top:solid 1px #565656;
+}
+.navContentShow li a {
+   display:block;
+   width:100%;
+   height:35px;
+   text-align:center;
+   font-size:15px;
+   line-height:35px;
+   color:#fff;
+   text-decoration:none;
+   border-bottom:solid 1px #565656;
+}
+.navContentShow li a:hover {
+   color:#fff;
+   background-color:#ebb30a;
+}
+.selected1 {
+   color:#fff;background-color:#ebb30a;
+ }

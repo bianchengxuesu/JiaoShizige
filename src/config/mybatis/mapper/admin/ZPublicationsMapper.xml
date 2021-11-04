@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ischoolbar.programmer.dao.admin.ZPublicationsDao">
+	<!-- 专著教材插入操作 -->
+	<insert id="add" parameterType="com.ischoolbar.programmer.entity.admin.Publications">
+		insert into 
+		publications(
+						publications_id,
+						author,
+						department,
+						year,
+						publications_name,
+						press,
+						category,
+						cooperator,
+						note,
+						ISBN) 
+		values(
+						#{publications_id},
+						#{author},
+						#{department},
+						#{year},
+						#{publications_name},
+						#{press},
+						#{category},
+						#{cooperator},
+						#{note},
+						#{ISBN})
+	</insert>
+	<!-- 获取所有专著教材信息 -->
+	<select id="findAll" resultType="com.ischoolbar.programmer.entity.admin.Publications">
+		select * from publications
+	</select>
+	<!-- id查询专著教材信息 -->
+	<select id="queryById" resultType="com.ischoolbar.programmer.entity.admin.Publications" parameterType="long">
+		select * from publications where publications_id=#{publications_id}
+	</select>
+		<!-- 通过ISBN查询专著教材信息 -->
+	<select id="queryByISBN" resultType="com.ischoolbar.programmer.entity.admin.Publications" parameterType="long">
+		select * from publications where ISBN=#{ISBN}
+	</select>
+</mapper>

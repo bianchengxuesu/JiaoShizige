@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ischoolbar.programmer.dao.admin.CourseDao">
+	<!-- 通过名称获取课程信息 -->
+	<select id="findCourseByName" parameterType="String" resultType="com.ischoolbar.programmer.entity.admin.Course">
+		select * from course where coname like '%${value}%'
+	</select>
+</mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ischoolbar.programmer.dao.admin.ZSocialServiceDao">
+	<!-- 插入操作 -->
+	<insert id="add" parameterType="com.ischoolbar.programmer.entity.admin.SocialService">
+		insert into social_service(social_service_id,teacher_name,service_name,department,category) values(#{social_service_id},#{teacher_name},#{service_name},#{department},#{category})
+	</insert>
+	<!-- 获取所有信息 -->
+	<select id="findAll" resultType="com.ischoolbar.programmer.entity.admin.SocialService">
+		select * from social_service
+	</select>
+	<!-- id查询信息 -->
+	<select id="queryById" resultType="com.ischoolbar.programmer.entity.admin.SocialService" parameterType="long">
+		select * from social_service where social_service_id=#{social_service_id}
+	</select>
+</mapper>

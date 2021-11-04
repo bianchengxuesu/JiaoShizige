@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ischoolbar.programmer.dao.admin.TeacherDao">
+	<!-- 教师添加操作 -->
+	<insert id="add" parameterType="com.ischoolbar.programmer.entity.admin.Teacher">		
+		insert into teacher(teid,uid,salarys,chinesename) values(null,#{uid},#{salarys},#{chinesename})
+	</insert>
+	<!-- 教师添加职称 -->
+	<update id="addJobForTeacher">		
+		update teacher set job = #{job} where teid = #{teid}
+	</update>
+	<!-- 教师添加部门 -->
+	<update id="addDepartmentForTeacher">		
+		update teacher set department = #{department} where teid = #{teid}
+	</update>
+	<!-- 教师添加专业 -->
+	<update id="addSpecialtyForTeacher">		
+		update teacher set specialty = #{specialty} where teid = #{teid}
+	</update>
+	<!-- 教师添加职务 -->
+	<update id="addPositionForTeacher">		
+		update teacher set position = #{position} where teid = #{teid}
+	</update>
+	<!-- 教师删除操作 -->
+	<delete id="delete" parameterType="Long">
+		delete from teacher where teid =${value}
+	</delete>
+	<!-- 教师删除职称 -->
+	<update id="deleteJobForTeacher" parameterType="Long">		
+		update teacher set job = null where teid = #{teid}
+	</update>
+	<!-- 教师删除部门 -->
+	<update id="deleteDepartmentForTeacher" parameterType="Long">		
+		update teacher set department = null where teid = #{teid}
+	</update>
+	<!-- 教师删除专业 -->
+	<update id="deleteSpecialtyForTeacher" parameterType="Long">		
+		update teacher set specialty = null where teid = #{teid}
+	</update>
+	<!-- 教师删除职务 -->
+	<update id="deletePositionForTeacher" parameterType="Long">		
+		update teacher set position = null where teid = #{teid}
+	</update>
+	<!-- 教师信息获取所有 -->
+	<select id="findAll" resultType="com.ischoolbar.programmer.entity.admin.Teacher">
+		select * from teacher
+	</select>
+	<!-- 通过名称获取教师信息 -->
+	<select id="findTeacherByName" parameterType="String" resultType="com.ischoolbar.programmer.entity.admin.Teacher">
+		select * from teacher where chinesename like '%${value}%'
+	</select>
+	<!-- 通过职称获取教师信息 -->
+	<select id="findTeacherByJob" parameterType="String" resultType="com.ischoolbar.programmer.entity.admin.Teacher">
+		select * from teacher where job = #{job}
+	</select>
+	<!-- 通过部门获取教师信息 -->
+	<select id="findTeacherByDepartment" parameterType="String" resultType="com.ischoolbar.programmer.entity.admin.Teacher">
+		select * from teacher where department = #{department}
+	</select>
+	<!-- 通过专业获取教师信息 -->
+	<select id="findTeacherBySpecialty" parameterType="String" resultType="com.ischoolbar.programmer.entity.admin.Teacher">
+		select * from teacher where specialty = #{specialty}
+	</select>
+	<!-- 通过职务获取教师信息 -->
+	<select id="findTeacherByPosition" parameterType="String" resultType="com.ischoolbar.programmer.entity.admin.Teacher">
+		select * from teacher where position = #{position}
+	</select>
+	<!-- 通过id获取用户Id -->
+	<select id="findUidById" parameterType="Long" resultType="Long">
+		select uid from teacher where teid = #{teid}
+	</select>
+	<!-- 通过id获取教师名称 -->
+	<select id="findNameById" parameterType="Long" resultType="String">
+		select chinesename from teacher where teid = #{teid}
+	</select>
+	<!-- 通过id获取教师职称 -->
+	<select id="findJobById" parameterType="Long" resultType="String">
+		select job from teacher where teid = #{teid}
+	</select>
+	<!-- 通过id获取教师部门 -->
+	<select id="findDepartmentById" parameterType="Long" resultType="String">
+		select department from teacher where teid = #{teid}
+	</select>
+	<!-- 通过id获取教师专业 -->
+	<select id="findSpecialtyById" parameterType="Long" resultType="String">
+		select specialty from teacher where teid = #{teid}
+	</select>
+	<!-- 通过id获取教师职务 -->
+	<select id="findPositionById" parameterType="Long" resultType="String">
+		select position from teacher where teid = #{teid}
+	</select>
+</mapper>

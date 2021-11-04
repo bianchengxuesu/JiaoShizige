@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ischoolbar.programmer.dao.admin.ZAwardsDao">
+	<!-- 贡献插入操作 -->
+	<insert id="add" parameterType="com.ischoolbar.programmer.entity.admin.Awards">
+		insert into awards(award_id,teacher_name,department,award_name,award_level,date) values(#{award_id},#{teacher_name},#{department},#{award_name},#{award_level},#{date})
+	</insert>
+	<!-- 获取所有获奖信息 -->
+	<select id="findAll" resultType="com.ischoolbar.programmer.entity.admin.Awards">
+		select * from awards
+	</select>
+	<!-- id查询信息 -->
+	<select id="queryById" resultType="com.ischoolbar.programmer.entity.admin.Awards" parameterType="long">
+		select * from awards where award_id=#{award_id}
+	</select>
+	<!-- 通过关键字查询信息 -->
+	<select id="queryByKeywords" resultType="com.ischoolbar.programmer.entity.admin.Awards">
+		select * from awards where teacher_name like "%"#{text}"%";
+	</select>
+</mapper>
